@@ -150,6 +150,18 @@
         <item>1.30</item>
     </string-array>
 
+    <string-array name="bl_map_mode_entries">
+        <item>@string/bl_map_mode_lin</item>
+        <item>@string/bl_map_mode_exp</item>
+    </string-array>
+
+    <string-array name="bl_map_mode_values">
+        <!-- Do not translate. -->
+        <item>lin</item>
+        <!-- Do not translate. -->
+        <item>exp</item>
+    </string-array>
+
     <!-- Wi-Fi settings -->
 
     <!-- Match this with the order of NetworkInfo.DetailedState. --> <skip />

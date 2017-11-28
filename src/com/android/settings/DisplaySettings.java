@@ -79,7 +79,10 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     /** If there is no setting in the provider, use this. */
     private static final int FALLBACK_SCREEN_TIMEOUT_VALUE = 30000;
 
+    private static final String PROP_BL_MAP_MODE = "bl.map.mode";
+
     private static final String KEY_CATEGORY_DISPLAY = "display";
+    private static final String KEY_BL_MAP_MODE = "bl_map_mode";
     private static final String KEY_SCREEN_TIMEOUT = "screen_timeout";
     private static final String KEY_FONT_SIZE = "font_size";
     private static final String KEY_SCREEN_SAVER = "screensaver";
@@ -269,6 +272,32 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
             mNightModePreference.setValue(String.valueOf(currentNightMode));
             mNightModePreference.setOnPreferenceChangeListener(this);
         }
+
+        final ListPreference blMapModePreference =
+            (ListPreference) findPreference(KEY_BL_MAP_MODE);
+      	if (blMapModePreference != null) {
+            final Context context = getContext();
+            final String blMapModeLin = context.getString(R.string.bl_map_mode_lin);
+            final String blMapModeExp = context.getString(R.string.bl_map_mode_exp);
+            final String mode = SystemProperties.get(PROP_BL_MAP_MODE);
+            if (TextUtils.isEmpty(mode)) {
+                blMapModePreference.setValue(blMapModeLin);
+            } else {
+                blMapModePreference.setValue(mode);
+            }
+            blMapModePreference.setOnPreferenceChangeListener(new OnPreferenceChangeListener() {
+                @Override
+            		public boolean onPreferenceChange(Preference preference, Object newValue) {
+                    final String mode = String.valueOf(newValue);
+            		    if (mode.equals(blMapModeLin)) {
+                  			SystemProperties.set(PROP_BL_MAP_MODE, blMapModeLin);
+            		    } else if (mode.equals(blMapModeExp)) {
+                  			SystemProperties.set(PROP_BL_MAP_MODE, blMapModeExp);
+            		    }
+              		  return true;
+            	  }
+    	      });
+  	    }
     }
 
     private static boolean allowAllRotations(Context context) {

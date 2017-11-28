@@ -3259,4 +3259,7 @@
     <string name="automatic_storage_manager_activation_warning" msgid="6353100011690933254">"Dein Speicher wird jetzt vom Speichermanager verwaltet"</string>
     <string name="carrier_provisioning" msgid="4398683675591893169">"Informationen zur Nutzerverwaltung durch den Anbieter"</string>
     <string name="trigger_carrier_provisioning" msgid="3434865918009286187">"Nutzerverwaltung durch den Anbieter auslösen"</string>
+    <string name="bl_map_mode_exp">Exponentiell</string>
+    <string name="bl_map_mode_title">Hintergrundbeleuchtung Zuweisungsmodus</string>
+    <string name="bl_map_mode_description">Wähle zwischen linearem oder exponentiellem Hintergrundbeleuchtungswert zu Strom Zuweisungsmodus</string>
 </resources>

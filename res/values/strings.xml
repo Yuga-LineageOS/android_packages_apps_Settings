@@ -7960,4 +7960,9 @@
     <string name="touchscreen_gesture_settings_title">Touchscreen gestures</string>
     <string name="touchscreen_gesture_settings_summary">Perform various touchscreen gestures for quick actions</string>
 
+    <!-- Backlight mapping settings -->
+    <string name="bl_map_mode_lin">Linear</string>
+    <string name="bl_map_mode_exp">Exponential</string>
+    <string name="bl_map_mode_title">Backlight Mapping Mode</string>
+    <string name="bl_map_mode_description">Choose between linear and exponential backlight value to current mapping mode</string>
 </resources>
